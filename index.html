@@ -280,19 +280,20 @@
         </div>
       </div>
     </section>
-    <form action="" class="emil_container"  id="contact">
+    <form action="https://api.web3forms.com/submit" method="POST" class="emil_container"  id="contact">
       <div class="email_box">
         <div class="email_header">
           <h1>Let's Talk With Me!</h1>
         </div>
+        <input type="hidden" name="access_key" value="f1eeb203-8053-4d0e-bdca-670e2b1661b5">
         <div class="email_detail_box">
-          <input type="text" class="email_detail_input" placeholder="Full Name">
-          <input type="email" class="email_detail_input" placeholder="Email Address">
-          <input type="text" class="email_detail_input" placeholder="Phone Number">
-          <input type="text" class="email_detail_input" placeholder="Subject">
+          <input type="text" name="name" class="email_detail_input" placeholder="Full Name" required>
+          <input type="email" name="email" class="email_detail_input" placeholder="Email Address">
+          <input type="text" name="number" class="email_detail_input" placeholder="Phone Number">
+          <input type="text" name="subject" class="email_detail_input" placeholder="Subject">
         </div>
         <div class="email_message_box">
-          <textarea name="" id=""  rows="10" class="email_message_input" placeholder="Your Message"></textarea>
+          <textarea name="message" rows="10" class="email_message_input" placeholder="Your Message" required></textarea>
         </div>
         <div class="email_button_box">
           <button  type="submit" class="email_button">Send Message</button>
@@ -302,7 +303,6 @@
 
     <section class="section__container contact__container">
       <div class="logo">K</div>
-      <!-- <h2 class="section__header">Let's Talk With Me!</h2> -->
       <p class="section__description">
         An open invitation to connect, and exploring collaborative opportunities
         on my personal portfolio website.
