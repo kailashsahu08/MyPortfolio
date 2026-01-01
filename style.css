@@ -362,59 +362,153 @@ nav {
   color: var(--extra-light);
   text-align: center;
 }
- /* importing of skill card item */
- .flip-card {
-  background-color: transparent;
-  width: 190px;
-  height: 254px;
-  font-family: sans-serif;
+ .section__container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.title {
-  font-size: 1.5em;
-  font-weight: 900;
-  text-align: center;
-  margin: 0;
+.section__header {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    background:white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
+.section__description {
+    text-align: center;
+    color: #999;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    line-height: 1.6;
 }
 
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
+/* Compact Tag Style */
+.skills__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
-.flip-card-front, .flip-card-back {
-  box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  border: 1px solid coral;
-  border-radius: 1rem;
+.skill__category {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
 }
 
-.flip-card-front {
-  background: linear-gradient(120deg, bisque 60%, rgb(255, 231, 222) 88%,
-     rgb(255, 211, 195) 40%, rgba(255, 127, 80, 0.603) 48%);
-  color: coral;
+.skill__category:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(102, 126, 234, 0.3);
 }
 
-.flip-card-back {
-  background: linear-gradient(120deg, rgb(255, 174, 145) 30%, coral 88%,
-     bisque 40%, rgb(255, 185, 160) 78%);
-  color: white;
-  transform: rotateY(180deg);
+.category__header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.category__icon {
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 10px;
+}
+
+.category__title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.skills__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.skill__tag {
+    background: rgba(102, 126, 234, 0.1);
+    border: 1px solid rgba(102, 126, 234, 0.3);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #e0e0e0;
+    transition: all 0.3s ease;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill__tag::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.skill__tag:hover {
+    background: rgba(102, 126, 234, 0.2);
+    border-color: rgba(102, 126, 234, 0.6);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.skill__tag:hover::before {
+    left: 100%;
+}
+
+/* Beginner Badge */
+.skill__tag.beginner {
+    border-color: rgba(255, 193, 7, 0.4);
+    background: rgba(255, 193, 7, 0.1);
+}
+
+.skill__tag.beginner:hover {
+    background: rgba(255, 193, 7, 0.2);
+    border-color: rgba(255, 193, 7, 0.6);
+    box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
+}
+
+.beginner__badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    background: rgba(255, 193, 7, 0.3);
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    margin-left: 0.3rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .section__header {
+        font-size: 2rem;
+    }
+
+    .skill__category {
+        padding: 1rem;
+    }
+
+    .skills__tags {
+        gap: 0.5rem;
+    }
+
+    .skill__tag {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+    }
 }
 /* exit from skill card item */
 /* project card style */
